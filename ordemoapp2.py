@@ -2,6 +2,7 @@
 
 import pdfquery
 import json
+import os
 
 from flask import Flask
 from flask import request
@@ -65,8 +66,7 @@ def makeResult(data):
     if data.len == 0:
         return {}
 
-    speech = "First " + str(data.len) + " results are: "
-            + data
+    speech = "First " + str(data.len) + " results are: " + data
 
     print("Response:")
     print(speech)
@@ -83,4 +83,4 @@ if __name__ == '__main__':
 
     print("Starting app on port %d" % port)
 
-    app.run(debug=False, port=port, host='0.0.0.0')
+    app.run(debug=True, port=port, host='0.0.0.0')
