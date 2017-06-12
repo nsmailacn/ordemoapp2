@@ -57,16 +57,21 @@ def processRequest(req):
         if count == 5:
             break
 
-    data = json.load(results)
-    res = makeResult(data)
+    res = makeResult(results)
     return res
 
 
-def makeResult(data):    
-    if data.len == 0:
-        return {}
+def makeResult(results):
+    print(results)
+    if len(results) == 0:
+        return {
+            "speech": "No result found",
+            "displayText": "No result found",
+            "source": "ordemoapp2"
+            }
 
-    speech = "First " + str(data.len) + " results are: " + data
+    data = json.dumps(results)
+    speech = "First few results are: " + data
 
     print("Response:")
     print(speech)
