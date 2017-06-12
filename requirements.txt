@@ -1,2 +1,2 @@
-pdfquery==0.4.3Flask==0.10.1
-
+Flask==0.10.1
+pdfquery==0.4.3
