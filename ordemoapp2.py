@@ -39,7 +39,7 @@ def processRequest(req):
     strTxt = 'LTTextLineHorizontal:contains("' + str(searchText) + '")'
 
     from pdfquery.cache import FileCache
-    pdf = pdfquery.PDFQuery("RMS16_og2.pdf",
+    pdf = pdfquery.PDFQuery("rms-160-rn.pdf",
                             parse_tree_cacher=FileCache("tmp/"))
     pdf.load()
     results = []
